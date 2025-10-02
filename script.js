@@ -1,5 +1,10 @@
 
-
+if(localStorage.length == 0){
+    let listItems = [];
+    localStorage.setItem('products',JSON.stringify(listItems));
+    let productsJ = localStorage.getItem('products');
+    let products = JSON.parse(productsJ);
+}
 let productsJ = localStorage.getItem('products');
 let products = JSON.parse(productsJ);
 
