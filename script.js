@@ -1,4 +1,5 @@
 
+
 let productsJ = localStorage.getItem('products');
 let products = JSON.parse(productsJ);
 
@@ -51,7 +52,7 @@ let showProducts = () => {
                                    <td>${el.quantity+' Peaces'}</td>
                                    <td class="d-flex flex-row gap-2">
                                       <button onclick="removePhone(${index})" class='btn btn-danger w-20 w-lg-40'>Delete</button>
-                                      <button onclick="openModal2(${index})" class='btn btn-warning w-20 w-lg-40'>Edit</button>
+                                      <button onclick="openModal2(${index})" class='btn btn-warning w-20'>Edit</button>
                                    </td>
                                  
                                   </tr>`
