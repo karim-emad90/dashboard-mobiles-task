@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="d-flex flex-column align-items-center gap-3">
+
+    <div class="container mt-3 col-12 d-flex flex-column justify-content-center  gap-3">
+       <h3 class="col-12">Mobile Devices Dashboard</h3>
+       <div class="d-flex flex-column flex-lg-row gap-2">
+           <button onclick="showProducts()" class="btn btn-dark rounded col-12 col-lg-3 ">Show Products</button>
+           <button class="btn btn-primary rounded col-12 col-lg-3" onclick="openModal()">Add New Phone</button>
+       </div>
+       
+    </div>
+    
+
+    <div class="container">
+           <table class="table table-dark ">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Qty</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    </div>
+
+    <div id="modal" onclick="closeModal()" class="d-none flex-column align-items-center justify-content-center" tabindex="-1" role="dialog">
+                <div onclick="event.stopPropagation()" class="bg-white col-12 col-lg-5 rounded shadow porder p-4 d-flex flex-column gap-3 animate__animated animate__fadeInDown ">
+                    <h3>Add New Product</h3>
+                    <input id="productName" class="form-control" type="text" placeholder="Enter new phone name">
+                    <input id="productPrice" class="form-control" type="number" placeholder="Enter new phone price">
+                    <input id="productQty" class="form-control" type="number" placeholder="Enter new phone quantity">
+                    <button class="btn btn-success" onclick="addNewPhone()">Save New Phone</button>
+                </div>
+  </div>
+
+  <div id="modal2" onclick="closeModal2()" class="d-none flex-column align-items-center justify-content-center" tabindex="-1" role="dialog">
+
+                <div onclick="event.stopPropagation()" class="bg-white col-12 col-lg-5 rounded shadow porder p-4 d-flex flex-column gap-3 animate__animated animate__fadeInDown ">
+                    <h3>Add New Product</h3>
+                    <input id="productName2" class="form-control" type="text" placeholder="Enter new phone name">
+                    <input id="productPrice2" class="form-control" type="number" placeholder="Enter new phone price">
+                    <input id="productQty2" class="form-control" type="number" placeholder="Enter new phone quantity">
+                    <button class="btn btn-success" onclick="updatePhone()">Update Phone</button>
+                </div>
+  </div>
+</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
