@@ -5,6 +5,9 @@ let products = JSON.parse(productsJ);
 
 let table = document.querySelector('table');
 let tableBody = document.querySelector('table tbody');
+let noitemsRow = document.querySelector('.noitems-row');
+let showButton = document.querySelector('.showButton');
+let hideButton = document.querySelector('.hideButton');
 
 let modal = document.querySelector('#modal');
 let modal2 = document.querySelector('#modal2');
@@ -42,8 +45,11 @@ let closeModal2 = () => {
 }
 
 let showProducts = () => {
-
-    table.innerHTML = '';
+    showButton.classList.add('d-none');
+    hideButton.classList.remove('d-none');
+    table.classList.remove('d-none');
+    
+       table.innerHTML = '';
     products.forEach((el, index) => {
         let row = `<tr> 
                                    <td>${index+1}</td>
@@ -58,8 +64,18 @@ let showProducts = () => {
                                   </tr>`
       table.innerHTML +=row;
     })
-    
-}
+
+    if(products.length == 0){
+        let row = `<tr>There are no items in store yet,please add new items!</tr>`
+        table.innerHTML += row;
+    }
+    }
+
+ let hideProducts = () => {
+    hideButton.classList.add('d-none');
+    showButton.classList.remove('d-none');
+    table.classList.add('d-none');
+ }
 
 let addNewPhone = () => {
     let product = {
